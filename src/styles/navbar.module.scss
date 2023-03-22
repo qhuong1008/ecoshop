@@ -1,0 +1,37 @@
+.navbarContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-weight: 600;
+  background-color: white;
+  font-weight: 700;
+  .navLeft,
+  .navRight {
+    display: flex;
+    flex-direction: row;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .navCenter {
+    img {
+      width: 75px;
+      height: 75px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .navItem {
+    margin: 0 30px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

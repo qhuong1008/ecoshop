@@ -1,0 +1,85 @@
+@import "globalstyle.module.scss";
+
+.sortbarContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: #ededed;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-left: 20px;
+  max-width: 970px;
+  .sortbarFilter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .sortbarOptionList {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    .sortbarOptionItem {
+      background-color: #fff;
+      padding: 10px 10px;
+      margin-right: 10px;
+      border-radius: 3px;
+      &:hover {
+        cursor: pointer;
+      }
+      .priceCombobox {
+        border: none;
+        outline: none;
+        height: 100%;
+        width: 100%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .active {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+}
+.miniPageController {
+  display: flex;
+  align-items: center;
+  float: right;
+  .miniPageController__btn {
+    display: flex;
+    flex-direction: row;
+  }
+  .miniPageController__current {
+    color: $primary-color;
+  }
+  .miniPageController__btn {
+    margin-left: 20px;
+    .miniPageController__prevBtn,
+    .miniPageController__nextBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      margin-left: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 990px) {
+  .sortbarContainer {
+    width: auto;
+    margin-right: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .sortbarContainer {
+    .sortbarFilter {
+      display: none;
+    }
+  }
+}

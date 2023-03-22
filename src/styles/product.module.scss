@@ -1,0 +1,25 @@
+@import "globalstyle.module.scss";
+
+.productContainer {
+  //   max-height: 300px;
+  .productImage {
+    img {
+      width: 275px;
+      height: 375px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  .productInfo {
+    margin: 10px 0;
+    .productName {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .productPrice {
+      font-size: 20px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+}
