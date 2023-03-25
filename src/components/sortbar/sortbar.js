@@ -1,10 +1,5 @@
 import styles from "../../styles/sortbar.module.scss";
-import {
-  faAngleLeft,
-  faAngleRight,
-  faBars,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Sortbar() {
   return (

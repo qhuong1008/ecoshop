@@ -3,17 +3,25 @@ import Navbar from "@/components/navbar/navbar";
 import ProductCart from "@/components/productcart/productcart";
 import { useRouter } from "next/router";
 import styles from "../styles/home.module.scss";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
-export default function Home() {
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+    },
+  };
+}
+export default function Home(props) {
+  const { t } = useTranslation();
+
   const router = useRouter();
   return (
     <>
       <Navbar />
       <div className={styles.homepageCover}>
-        <div className={styles.coverTitle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
+        <div className={styles.coverTitle}>{t("home:coverTitle")}</div>
         <div
           className={styles.shopNowBtn}
           onClick={() => router.push("/collections")}
