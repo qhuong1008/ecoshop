@@ -1,18 +1,35 @@
 import styles from "../../styles/footer.module.scss";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import React from "react";
+import { useState, useEffect } from "react";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+// export async function getStaticProps({ locale }) {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ["home"])),
+//     },
+//   };
+// }
 
 function Footer() {
+  // avoid not matching server-rendered HTML
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+  const { t } = useTranslation();
+  const router = useRouter();
+
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerContent}>
         <div className={styles.footerTitle}>
           <h1>Eco Smart Solutions</h1>
-          <p>
-            Đội ngũ Eco Smart Solutions luôn đặt tôn chỉ Hiệu quả - Tôn trọng -
-            Chuyên nghiệp luôn cố gắng hoạt động vì mục tiêu kiến tạo một thế
-            giới bền vững.
-          </p>
+          <p>{hydrated && t("footer:footerTitle")}</p>
         </div>
         <div className={styles.footerSocials}>
           <div className={styles.socialIcon}>

@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import styles from "../styles/home.module.scss";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import React from "react";
+import { useState, useEffect } from "react";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -14,6 +16,11 @@ export async function getStaticProps({ locale }) {
   };
 }
 export default function Home(props) {
+  // avoid not matching server-rendered HTML
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
   const { t } = useTranslation();
 
   const router = useRouter();
@@ -26,7 +33,7 @@ export default function Home(props) {
           className={styles.shopNowBtn}
           onClick={() => router.push("/collections")}
         >
-          Shop now
+          {hydrated && t("home:shopNowBtn")}
         </div>
       </div>
       <div className={styles.homeProducts}>
