@@ -3,6 +3,7 @@ import styles from "../../styles/navbar.module.scss";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import { useState, useEffect } from "react";
+import Cart from "../cart/cart";
 
 function Navbar() {
   const router = useRouter();
@@ -12,6 +13,10 @@ function Navbar() {
     setHydrated(true);
   }, []);
   const { t } = useTranslation();
+
+  const [showCart, setShowCart] = useState(false);
+  console.log(showCart);
+
   return (
     <>
       <div className={styles.navbarContainer}>
@@ -37,7 +42,8 @@ function Navbar() {
         </div>
         <div className={styles.navRight}>
           <div
-            onClick={() => router.push("/mycart")}
+            // onClick={() => router.push("/mycart")}
+            onClick={() => setShowCart(true)}
             className={styles.navItem}
           >
             {hydrated && t("navbar:cart")}
@@ -50,6 +56,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      {showCart && <Cart />}
     </>
   );
 }
