@@ -1,0 +1,193 @@
+@import "globalstyle.module.scss";
+
+.checkoutContainer {
+  padding: 40px 100px;
+  .checkoutHeader {
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  .checkoutFlex {
+    display: flex;
+    flex-direction: row;
+    .checkoutInfo {
+      width: 390px;
+      margin-right: 90px;
+      .contactInformation {
+        .contactHeader {
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .emailSection {
+          display: flex;
+          flex-direction: row;
+          margin: 13px 0;
+          background-color: white;
+          align-items: center;
+          border: 1px solid #d8d8d8;
+          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05) !important;
+          font-weight: 600;
+          font-size: 20px;
+          border-radius: 5px;
+          .checkoutEmail {
+            padding: 16px 16px;
+            color: #555;
+            cursor: pointer;
+            max-width: 140px;
+            width: 140px;
+          }
+
+          input {
+            border: none;
+            outline: none;
+            color: #777;
+            font-weight: 600;
+            font-size: 20px;
+
+            &::placeholder {
+              color: #b5b5b5;
+            }
+          }
+        }
+      }
+      .shippingInformation {
+        .shippingHeader {
+          font-size: 18px;
+          font-weight: 600;
+          margin-top: 40px;
+        }
+        .shippingInputSection {
+          .shippingInputItem {
+            display: flex;
+            flex-direction: row;
+            margin: 13px 0;
+            background-color: white;
+            align-items: center;
+            border: 1px solid #d8d8d8;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05) !important;
+            font-weight: 600;
+            font-size: 20px;
+            border-radius: 5px;
+            label {
+              padding: 16px 0px;
+              margin-left: 16px;
+              color: #555;
+              cursor: pointer;
+              width: 140px;
+            }
+
+            input {
+              border: none;
+              outline: none;
+              color: #777;
+              font-weight: 600;
+              font-size: 20px;
+              &::placeholder {
+                color: #b5b5b5;
+              }
+            }
+          }
+        }
+      }
+      .acceptTerm {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        input {
+          position: relative;
+          top: 5px;
+          margin-right: 10px;
+        }
+      }
+      .checkoutActions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        a {
+          text-decoration: none;
+          color: green;
+          font-size: 20px;
+        }
+        .continueBtn {
+          color: white;
+          background-color: $primary-color;
+          cursor: pointer;
+          padding: 12px 18px;
+          font-size: 20px;
+          border-radius: 99px;
+        }
+      }
+    }
+    .checkoutOrder {
+      width: 100%;
+      height: fit-content;
+      background-color: #e8fff5;
+      border: 1.5px solid rgb(150, 245, 215);
+      .orderHeader {
+        padding: 20px 20px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .headerRuler {
+        width: 100%;
+        height: 1.5px;
+        background-color: rgb(150, 245, 215);
+      }
+      .orderList {
+        .orderItemContainer {
+          .orderItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px 20px;
+            .orderInfo {
+              display: flex;
+              flex-direction: row;
+              img {
+                width: 95px;
+                height: 95px;
+                object-fit: fill;
+                border-radius: 10px;
+                margin-right: 20px;
+              }
+              .productName {
+                font-weight: 600;
+                font-size: 18px;
+              }
+            }
+          }
+          .orderRuler {
+            margin: auto;
+            width: 94%;
+            height: 0.5px;
+            background-color: rgb(199, 199, 199);
+          }
+        }
+      }
+      .orderSummary {
+        padding: 20px 20px;
+        .orderSummaryItem {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .info {
+            font-weight: 600;
+          }
+        }
+      }
+      .orderTotal {
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 20px;
+        .info {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

@@ -9,13 +9,13 @@ function Navbar() {
   const router = useRouter();
   // avoid not matching server-rendered HTML
   const [hydrated, setHydrated] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const { t } = useTranslation();
+  console.log(showCart);
+
   useEffect(() => {
     setHydrated(true);
   }, []);
-  const { t } = useTranslation();
-
-  const [showCart, setShowCart] = useState(false);
-  console.log(showCart);
 
   return (
     <>
@@ -41,11 +41,7 @@ function Navbar() {
           />
         </div>
         <div className={styles.navRight}>
-          <div
-            // onClick={() => router.push("/mycart")}
-            onClick={() => setShowCart(true)}
-            className={styles.navItem}
-          >
+          <div onClick={() => setShowCart(true)} className={styles.navItem}>
             {hydrated && t("navbar:cart")}
           </div>
           <div
@@ -56,7 +52,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      {showCart && <Cart />}
+      {showCart && <Cart show={showCart} onClose={() => setShowCart(false)} />}
     </>
   );
 }
