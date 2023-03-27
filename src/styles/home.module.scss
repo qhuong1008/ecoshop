@@ -1,22 +1,20 @@
 @import "../styles/globalstyle.module.scss";
 .homepageCover {
-  background-image: url("https://i.pinimg.com/originals/82/d0/fa/82d0fab5e09ff0a5307cb39cd5442f10.jpg");
+  background-image: linear-gradient(to bottom right, #21c57b, #026b56);
   height: 500px;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0px 150px;
 }
 .coverTitle {
-  width: 400px;
+  width: 500px;
   color: white;
   font-size: 30px;
-
-  text-align: center;
-  margin-top: 130px;
+  text-align: left;
 }
 .shopNowBtn {
   border-radius: 999px;
@@ -27,6 +25,7 @@
   width: fit-content;
   font-size: 20px;
   font-weight: 550;
+  text-transform: capitalize;
   // margin-left: 30%;
   &:hover {
     cursor: pointer;
